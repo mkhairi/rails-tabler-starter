@@ -688,6 +688,11 @@ supports-color@^7.1.0:
   dependencies:
     has-flag "^4.0.0"
 
+tinymce@^6.1.2:
+  version "6.1.2"
+  resolved "https://registry.yarnpkg.com/tinymce/-/tinymce-6.1.2.tgz#d2bca8c372d546d0688f6504ccc431e9ca4e6137"
+  integrity sha512-tl4KbEKdPzyPTatJkblN2AqzRj9jaRGyATnwaSnsLFGKb4AI6B+4e0Gc8dUDXuqAjgSnHokhzamrQJLbSn4CmQ==
+
 to-regex-range@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/to-regex-range/-/to-regex-range-5.0.1.tgz#1648c44aae7c8d988a326018ed72f5b4dd0392e4"

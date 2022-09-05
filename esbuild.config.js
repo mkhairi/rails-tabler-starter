@@ -6,20 +6,6 @@ const rails = require('esbuild-rails')
 const path = require('path')
 const { sassPlugin } = require('esbuild-sass-plugin')
 
-const safelistPatterns = [
-  /^alert/,
-  /^col/,
-  /^form/,
-  /^input/,
-  /^dropdown/,
-  /^accordion/,
-  /^modal/,
-  /^snackbar/,
-  /^carousel/,
-  /^list-timeline/,
-  /data-bs-popper/
-]
-
 build({
   entryPoints: [
     'javascripts/application.js',
