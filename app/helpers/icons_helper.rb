@@ -8,10 +8,10 @@ module IconsHelper
   private
 
   def icons_path
-    Rails.root.join('node_modules/@tabler/icons/icons/')
+    Rails.root.join('node_modules/@tabler/icons/icons')
   end
 
   def read_tabler_svg(filename)
-    InlineSvg::IOResource.read("#{icons_path}/#{filename}.svg")
+    File.read("#{icons_path}/#{filename}.svg")
   end
 end
