@@ -1,42 +1,44 @@
 #!/usr/bin/env node
 
-const { build } = require('esbuild')
-const { copy } = require('esbuild-plugin-copy')
-const rails = require('esbuild-rails')
-const path = require('path')
-const { sassPlugin } = require('esbuild-sass-plugin')
+import * as esbuild from 'esbuild'
+import { copy } from 'esbuild-plugin-copy'
+import rails from 'esbuild-rails'
+import path from 'path'
+import { sassPlugin } from 'esbuild-sass-plugin'
 
-build({
+const config = {
   entryPoints: [
     'javascripts/application.js',
     'stylesheets/application.scss'
   ],
   bundle: true,
   sourcemap: process.argv.includes('--sourcemap'),
-  minify: true,
-  resolveExtensions: ['.ts', '.js'],
+  //resolveExtensions: ['.ts', '.js'],
   logLevel: 'info',
   outdir: 'builds',
   outbase: path.join(process.cwd(), 'app/assets'),
   absWorkingDir: path.join(process.cwd(), 'app/assets'),
-  watch: process.argv.includes('--watch'),
   metafile: true,
   entryNames: '[name]',
-  external: ['*.css', '*.woff', '*.png', '*.svg'],
+  minify: process.env.RAILS_ENV == 'production',
+  //external: ['*.css', '*.woff', '*.png', '*.svg'],
   loader: {
-    '.png': 'dataurl',
+    '.jpeg': 'file',
+    '.png': 'file',
     '.woff': 'dataurl',
     '.woff2': 'dataurl',
     '.eot': 'dataurl',
     '.ttf': 'dataurl',
-    '.svg': 'dataurl'
+    '.svg': 'file'
   },
   define: {
-    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production'),
-    'process.env.RELEASE_STAGE': JSON.stringify(process.env.RAILS_ENV || 'production'),
+    'process.env.RELEASE_STAGE': JSON.stringify(
+      process.env.RAILS_ENV || 'production'
+    ),
     'process.env.BUILD_AT': JSON.stringify(process.env.BUILD_AT || Date.now()),
     global: 'window'
   },
+  // platform: 'node',
   plugins: [
     rails(),
     copy({
@@ -52,11 +54,20 @@ build({
         }
       ]
     }),
-    sassPlugin({ cssImports: true })
+    sassPlugin()
   ]
-})
-  .then(() => console.log('⚡ Build complete! ⚡'))
-  .catch(error => {
+}
+
+if (process.argv.includes('--watch')) {
+  let context = await esbuild.context({ ...config, logLevel: 'info' })
+  console.log(
+    `⚡ Build node esbuild for ${process.env.RAILS_ENV} complete! ⚡, watching...`
+  )
+  context.watch()
+} else {
+  esbuild.build(config).catch(error => {
     console.error(error)
     process.exit(1)
   })
+  console.log(`⚡ Build node esbuild for ${process.env.RAILS_ENV} complete! ⚡`)
+}
