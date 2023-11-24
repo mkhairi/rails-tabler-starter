@@ -1,0 +1,44 @@
+<!-- Page title -->
+<div class="page-header d-print-none text-white">
+  <div class="row g-2 align-items-center">
+    <div class="col">
+      <!-- Page pre-title -->
+      <div class="page-pretitle">
+        Icons
+      </div>
+      <h2 class="page-title">
+        Icon helper
+      </h2>
+    </div>
+    <!-- Page title actions -->
+    <div class="col-12 col-md-auto ms-auto d-print-none">
+      <div class="btn-list">
+        <span class="d-none d-sm-inline">
+          <a href="https://tabler-icons.io/" class="btn btn-warning" target="_blank">
+            Browse all icons
+          </a>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="page-body">
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <div class="card card-lg">
+        <div class="card-body markdown">
+          <pre class="code text-center"> <%%= icon :icon_name %>  </pre>
+          <div class="row gx-2">
+            <% icons = Dir[Rails.root.join('node_modules/@tabler/icons/icons/*.svg')]%>
+            <% icons.each do |icon| %>
+              <% icon_name = icon.split('/').last.split('.').first %>
+              <div class="col icon-preview p-4">
+                <div class="icon-preview-icon" title="<%=icon_name%>"><%= icon(icon_name) %></div>
+              </div>
+            <%end%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

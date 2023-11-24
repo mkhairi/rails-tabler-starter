@@ -1,4 +1,4 @@
-# fly.toml file generated for tabler on 2022-09-01T15:22:20+08:00
+# fly.toml file generated for tabler on 2023-01-10T01:10:15+08:00
 
 app = "tabler"
 kill_signal = "SIGINT"
@@ -7,16 +7,14 @@ processes = []
 
 [build]
   [build.args]
-    BUNDLER_VERSION = "2.3.13"
-    NODE_VERSION = "16.13.1"
-    RUBY_VERSION = "3.1.1"
+    BUILD_COMMAND = "bin/rails fly:build"
+    SERVER_COMMAND = "bin/rails fly:server"
 
 [deploy]
   release_command = "bin/rails fly:release"
 
 [env]
   PORT = "8080"
-  SERVER_COMMAND = "bin/rails fly:server"
 
 [experimental]
   allowed_public_ports = []

@@ -7,8 +7,8 @@ export default class extends Controller {
   connect () { }
 
   apply () {
-    document.body.classList.remove('theme-dark', 'theme-light');
-    document.body.classList.add(`theme-${this.theme}`);
+    document.documentElement.setAttribute('data-bs-theme', this.theme)
+    document.body.setAttribute('data-bs-theme', this.theme)
   }
 
   switch (event) {

@@ -5,8 +5,6 @@ module IconsHelper
     InlineSvg::TransformPipeline.generate_html_from(read_tabler_svg(filename), options).html_safe
   end
 
-  private
-
   def icons_path
     Rails.root.join('node_modules/@tabler/icons/icons')
   end

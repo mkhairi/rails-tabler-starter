@@ -17,16 +17,14 @@ Tabler Official Documentation https://preview.tabler.io/
 
 This repo demo: https://tabler.fly.dev/
 
-Current Main Branch: rails 7 + esbuild
+Current Main Branch: rails 7.1 + esbuild
 
-This README would normally document whatever steps are necessary to get the application up and running.
-
-Assume you already have  dev enviroment rails, nodejs, yarn etc.. if not, 
-i recommend you to use asdf version manager. follow install instruction here https://github.com/asdf-vm
+If you already have a development environment set up with Rails, Node.js, Yarn, etc., great! If not, I recommend using the ASDF version manager. You can find installation instructions at https://github.com/asdf-vm.
 
 then install plugins ruby nodejs and yarn
 
 ```
+asdf install
 gem install bundler
 bundle install
 yarn install
