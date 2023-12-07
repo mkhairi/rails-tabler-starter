@@ -29,8 +29,8 @@
         <div class="card-body markdown">
           <pre class="code text-center"> <%%= icon :icon_name %>  </pre>
           <div class="row gx-2">
-            <% icons = Dir[Rails.root.join('node_modules/@tabler/icons/icons/*.svg')]%>
-            <% icons.each do |icon| %>
+            <% icons = Dir[icons_path.join('*.svg')]%>
+            <% icons.sample(100).each do |icon| %>
               <% icon_name = icon.split('/').last.split('.').first %>
               <div class="col icon-preview p-4">
                 <div class="icon-preview-icon" title="<%=icon_name%>"><%= icon(icon_name) %></div>

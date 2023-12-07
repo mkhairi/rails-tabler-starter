@@ -1,0 +1,134 @@
+<!-- Page title -->
+<div class="page-header d-print-none text-white">
+  <div class="row g-2 align-items-center">
+    <div class="col">
+      <!-- Page pre-title -->
+      <div class="page-pretitle">
+        Simple Form, Tinymce
+      </div>
+      <h2 class="page-title">
+        Navbar overlap layout
+      </h2>
+    </div>
+    <!-- Page title actions -->
+    <div class="col-12 col-md-auto ms-auto d-print-none">
+      <div class="btn-list">
+        <span class="d-none d-sm-inline">
+          <a href="https://tabler.io/preview" class="btn btn-danger" target="_blank">
+            See Official preview
+          </a>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="page-body">
+  <div class="row">
+    <div class="col-12">
+      <div class="card card-lg">
+        <div class="card-body">
+          <%-
+            fruit = [:apple, :banana, :cherry, :coconut, :grape, :lime, :mango, :orange, :pear, :pineapple]
+            music = [:rock, :pop, :jazz, :heavy_metal, :hip_hop, :house, :electronic_dance, :dance, :techno]
+            language = [:en, :de, :es, :ru]
+            color = [:red, :pink, :violet, :indigo, :blue, :teal, :green, :yellow]
+            pill = [:red, :blue]
+            choises = [:a, :b, :c, :d]
+          %>
+          <div class="hr-text"> Inline Form </div>
+          <%= simple_form_for :user0, url: "#",
+              wrapper: :inline_form,
+              html: { class: "row row-cols-lg-auto g-3 align-items-center" },
+              wrapper_mappings: {
+                boolean: :inline_boolean
+              } do |f| %>
+            <%= f.input :email %>
+            <%= f.input :password %>
+            <%= f.input :terms %>
+            <div class="col-12">
+              <%= f.button :submit, class: "btn-primary" %>
+            </div>
+          <% end %>
+          <div class="hr-text"> Floating Form </div>
+          <%= simple_form_for :user1, url: "#",
+            wrapper: :floating_labels_form,
+            wrapper_mappings: {
+              select: :floating_labels_select
+            } do |f| %>
+            <%= f.error_notification %>
+            <%= f.input :email %>
+            <%= f.input :password %>
+            <%= f.input :language, collection: [:en, :de, :es, :ru], prompt: :translate %>
+            <%= f.input :bio %>
+            <%= f.button :submit, class: "btn-primary" %>
+            <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
+          <% end %>
+          <div class="hr-text"> Horizontal Form </div>
+          <%= simple_form_for :user2, url: "#",
+            wrapper: :horizontal_form,
+            wrapper_mappings: {
+              boolean:       :horizontal_boolean,
+              check_boxes:   :horizontal_collection,
+              date:          :horizontal_multi_select,
+              datetime:      :horizontal_multi_select,
+              file:          :horizontal_file,
+              radio_buttons: :horizontal_collection,
+              range:         :horizontal_range,
+              time:          :horizontal_multi_select,
+              select:        :horizontal_select
+            } do |f| %>
+            <%= f.error_notification %>
+            <%= f.input :name %>
+            <%= f.input :email, input_html: { autocomplete: 'email' } %>
+            <%= f.input :password, input_html: { autocomplete: 'current-password' } %>
+            <%= f.input :avatar, as: :file, input_html: { accept: Mime::LOOKUP.keys.keep_if{ |v| v =~ /image/ } } %>
+            <%= f.input :bio %>
+            <%= f.input :birthday %>
+            <%= f.input :color, as: :radio_buttons,  collection: color, wrapper: :horizontal_collection_inline %>
+            <%= f.input :fruit, as: :check_boxes, collection: fruit, wrapper: :horizontal_collection_inline %>
+            <%= f.input :music, collection: music, input_html: { multiple: true } %>
+            <%= f.input :language, collection: language, prompt: :translate %>
+            <%= f.input :pill, as: :radio_buttons, collection: pill %>
+            <%= f.input :choises, as: :check_boxes, collection: choises %>
+            <%= f.input :friends %>
+            <%= f.input :mood, as: :range %>
+            <%= f.input :awake %>
+            <%= f.input :first_kiss %>
+            <%= f.input :active, as: :radio_buttons %>
+            <%= f.input :terms, as: :tinymce %>
+            <div class="row mb-0">
+              <div class="col-sm-9 offset-sm-3">
+                <%= f.button :submit, class: "btn-primary" %>
+                <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
+              </div>
+            </div>
+          <% end %>
+          <div class="hr-text"> Verticals Form </div>
+          <%= simple_form_for :user3, url: "#" do |f| %>
+            <%= f.error_notification %>
+            <%= f.input :name %>
+            <%= f.input :email, input_html: { autocomplete: 'email' } %>
+            <%= f.input :password, input_html: { autocomplete: 'current-password' } %>
+            <%= f.input :avatar, as: :file, input_html: { accept: Mime::LOOKUP.keys.keep_if{ |v| v =~ /image/ } } %>
+            <%= f.input :bio %>
+            <%= f.input :birthday %>
+            <%= f.input :color, as: :radio_buttons, collection: color, wrapper: :vertical_collection_inline %>
+            <%= f.input :fruit, as: :check_boxes, collection: fruit, wrapper: :vertical_collection_inline %>
+            <%= f.input :music, collection: music, input_html: { multiple: true } %>
+            <%= f.input :language, collection: language, prompt: :translate %>
+            <%= f.input :pill, as: :radio_buttons, collection: pill %>
+            <%= f.input :choises, as: :check_boxes, collection: choises %>
+            <%= f.input :friends %>
+            <%= f.input :mood, as: :range %>
+            <%= f.input :awake %>
+            <%= f.input :first_kiss %>
+            <%= f.input :active, as: :radio_buttons %>
+            <%= f.input :terms, as: :tinymce %>
+            <%= f.button :submit, class: "btn-primary" %>
+            <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
