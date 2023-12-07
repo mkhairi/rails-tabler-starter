@@ -6,7 +6,7 @@ module IconsHelper
   end
 
   def icons_path
-    Rails.root.join('node_modules/@tabler/icons/icons')
+    Rails.public_path.join("assets/icons")
   end
 
   def read_tabler_svg(filename)

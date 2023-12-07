@@ -7,10 +7,7 @@ import path from 'path'
 import { sassPlugin } from 'esbuild-sass-plugin'
 
 const config = {
-  entryPoints: [
-    'javascripts/application.js',
-    'stylesheets/application.scss'
-  ],
+  entryPoints: ['javascripts/application.js', 'stylesheets/application.scss'],
   bundle: true,
   sourcemap: process.argv.includes('--sourcemap'),
   //resolveExtensions: ['.ts', '.js'],
@@ -50,6 +47,11 @@ const config = {
             './node_modules/tinymce/**/*.css'
           ],
           to: ['./tinymce'],
+          keepStructure: true
+        },
+        {
+          from: ['./node_modules/@tabler/icons/icons/**/*.svg'],
+          to: ['./icons'],
           keepStructure: true
         }
       ]
