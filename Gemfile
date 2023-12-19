@@ -72,3 +72,4 @@ end
 # Addons
 gem "inline_svg"
 gem "simple_form"
+gem "enum_help"

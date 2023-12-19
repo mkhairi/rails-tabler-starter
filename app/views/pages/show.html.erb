@@ -1,0 +1,17 @@
+<div class="page-body">
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <div class="card card-lg">
+        <div  id="pages" class="card-body">
+          <%= render @page %>
+          <div class="mt-4">
+            <%= link_to "Edit this page", edit_page_path(@page) %> |
+            <%= link_to "Back to pages", pages_path %>
+            <br/>
+            <%= button_to "Destroy this page", @page, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-danger mt-4" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
