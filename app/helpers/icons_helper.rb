@@ -2,7 +2,10 @@
 
 module IconsHelper
   def icon(filename, options = {})
-    InlineSvg::TransformPipeline.generate_html_from(read_tabler_svg(filename), options).html_safe
+    icon_name = filename.to_s.dasherize
+    InlineSvg::TransformPipeline.generate_html_from(read_tabler_svg(icon_name), options).html_safe
+  rescue StandardError
+    tag.span(icon_name) + content_tag(:span, icon_name, class: 'ml-1')
   end
 
   def icons_path

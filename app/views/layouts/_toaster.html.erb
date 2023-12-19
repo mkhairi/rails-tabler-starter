@@ -5,12 +5,10 @@
       <div class="toast toast fade <%= flash_class(type) %>" data-flash-target="notice" id="<%= SecureRandom.hex(8) %>" role="alert">
         <div class="toast-header">
           <%= icon "info-circle" %>
-          <strong class="me-auto ms-2">
-            <%= type.capitalize %>
-          </strong><small>
-            <%= Time.now.strftime("%H:%M") %>
-          </small><button aria-label="Close" class="btn-close" data-bs-dismiss="toast" type="button">
-          </button></div>
+          <strong class="me-auto ms-2"> <%= type.capitalize %></strong>
+          <small> <%= Time.now.strftime("%H:%M") %> </small>
+          <button aria-label="Close" class="btn-close" data-bs-dismiss="toast" type="button"> </button>
+        </div>
         <div class="toast-body">
           <%= message %>
         </div>
