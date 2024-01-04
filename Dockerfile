@@ -17,13 +17,13 @@
 # We recommend using the highest patch level for better security and
 # performance.
 
-ARG RUBY_VERSION=3.2.2
+ARG RUBY_VERSION=3.3.0
 ARG VARIANT=jemalloc-slim
 FROM quay.io/evl.ms/fullstaq-ruby:${RUBY_VERSION}-${VARIANT} as base
 
 LABEL fly_launch_runtime="rails"
 
-ARG NODE_VERSION=18.18.0
+ARG NODE_VERSION=20.10.0
 ARG YARN_VERSION=1.22.10
 ARG BUNDLER_VERSION=2.4.21
 

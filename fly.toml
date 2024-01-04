@@ -49,3 +49,7 @@ processes = []
 [[statics]]
   guest_path = "/app/public"
   url_prefix = "/"
+
+[mounts]
+  source="sqlite"
+  destination="/mnt/name"
