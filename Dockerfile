@@ -113,10 +113,7 @@ COPY --from=node_modules /app/node_modules /app/node_modules
 COPY . .
 
 # Adjust binstubs to run on Linux and set current working directory
-RUN chmod +x /app/bin/* && \
-    sed -i 's/ruby.exe\r*/ruby/' /app/bin/* && \
-    sed -i 's/ruby\r*/ruby/' /app/bin/* && \
-    sed -i '/^#!/aDir.chdir File.expand_path("..", __dir__)' /app/bin/*
+RUN chmod +x /app/bin/*
 
 # The following enable assets to precompile on the build server.  Adjust
 # as necessary.  If no combination works for you, see:
@@ -128,6 +125,9 @@ ENV SECRET_KEY_BASE 1
 # Run build task defined in lib/tasks/fly.rake
 ARG BUILD_COMMAND="bin/rails fly:build"
 RUN ${BUILD_COMMAND}
+
+# Entrypoint prepares the database.
+ENTRYPOINT ["/app/bin/docker-entrypoint"]
 
 # Default server start instructions.  Generally Overridden by fly.toml.
 ENV PORT 8080
