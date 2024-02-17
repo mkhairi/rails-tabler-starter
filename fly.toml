@@ -52,4 +52,4 @@ processes = []
 
 [mounts]
   source="sqlite"
-  destination="/mnt/name"
+  destination="/mnt/db"
