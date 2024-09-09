@@ -1,20 +1,26 @@
 {
   "name": "app",
-  "private": "true",
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
-    "@hotwired/turbo-rails": "^8.0.2",
+    "@hotwired/turbo-rails": "^8.0.5",
     "@popperjs/core": "^2.11.8",
-    "@tabler/core": "^1.0.0-beta20",
+    "@rails/actioncable": "^7.2.1",
+    "@rails/activestorage": "^7.2.1",
+    "@rails/request.js": "^0.0.9",
+    "@tabler/core": "^1.0.0-beta21",
     "@tabler/icons": "^2.47.0",
+    "autoprefixer": "^10.4.16",
     "bootstrap": "^5.3.2",
-    "esbuild": "^0.20.0",
-    "esbuild-plugin-copy": "^2.0.1",
+    "esbuild": "^0.23.0",
+    "esbuild-plugin-copy": "^2.1.1",
     "esbuild-rails": "^1.0.7",
     "esbuild-sass-plugin": "^3.0.0",
-    "tinymce": "^6.8.3"
+    "postcss": "^8.4.33",
+    "tinymce": "^7.0.0",
+    "workbox-cli": "^7.0.0"
   },
   "scripts": {
     "build": "node esbuild.config.mjs"
-  }
+  },
+  "packageManager": "yarn@4.4.1+sha256.920b4530755296dc2ce8b4351f057d4a26429524fcb2789d277560d94837c27e"
 }
