@@ -13,7 +13,7 @@ class PagesController < ApplicationController
     if @page
       render :show
     else
-      render params[:id]
+      render static_page
     end
   end
 
@@ -65,13 +65,20 @@ class PagesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_page
-      @page = Page.find_by(id: params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def page_params
-      params.require(:page).permit(:title, :content, :published, :preferences, :status)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_page
+    @page = Page.find_by(id: params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def page_params
+    params.require(:page).permit(:title, :content, :published, :preferences, :status)
+  end
+
+  # Only allow certain pages to be rendered
+  def static_page
+    page = %w[components forms sample icons].include?(params[:id]) ? params[:id] : "components"
+    "pages/statics/#{page}"
+  end
 end

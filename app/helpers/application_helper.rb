@@ -11,6 +11,7 @@ module ApplicationHelper
       else
       "info"
       end
-    klass = "text-bg-#{color} bg-#{color}"
+
+    "text-bg-#{color} bg-#{color}"
   end
 end
