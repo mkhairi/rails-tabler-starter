@@ -53,14 +53,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Enable Corepack
+        run: corepack enable && corepack use yarn@4.4.1
+
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: yarn
-
-      - name: Enable Corepack
-        run: corepack enable && corepack use yarn@4.4.1
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
