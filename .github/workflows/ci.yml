@@ -62,7 +62,7 @@ jobs:
           node-version-file: .node-version
 
       - name: Yarn install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --immutable
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
