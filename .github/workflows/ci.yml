@@ -59,7 +59,10 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version-file: .node-version
+
+      - name: Yarn install dependencies
+        run: yarn install --frozen-lockfile
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
