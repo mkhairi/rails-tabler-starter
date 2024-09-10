@@ -1255,7 +1255,7 @@
     "@tabler/icons" "^3.14.0"
     bootstrap "5.3.3"
 
-"@tabler/icons@^3.14.0":
+"@tabler/icons@^3.14.0", "@tabler/icons@^3.15.0":
   version "3.15.0"
   resolved "https://registry.yarnpkg.com/@tabler/icons/-/icons-3.15.0.tgz#4fb39ca456a14103edd950936fd98d150e82d007"
   integrity sha512-Pzo7g8znsCgCcnSLCfukEV+kcfr0/VjBoCLXJtrOtaY94gtvYjWC2hrKzazf511asUflRuk/+dxztdKYJgpe4g==
