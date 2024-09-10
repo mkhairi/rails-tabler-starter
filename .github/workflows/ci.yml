@@ -62,7 +62,7 @@ jobs:
           node-version-file: .node-version
 
       - name: Yarn install dependencies
-        run: yarn install --immutable
+        run: yarn install --check-files
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
