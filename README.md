@@ -6,7 +6,7 @@
 
 </p>
 <p align="center">
-Kickstart your Rails app with Tabler. A premium and open source dashboard template with a responsive and high-quality UI.
+Kickstart your Rails app a premium and open source dashboard template with a responsive and high-quality UI.
 </p>
 
 <p align="center">
