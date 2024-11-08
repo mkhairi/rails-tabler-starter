@@ -25,7 +25,10 @@ Tabler Official Documentation https://preview.tabler.io/
 
 This repo demo: https://tabler.labs.my/
 
-Current Main Branch: rails 7.2 + esbuild
+Current Main Branch: rails 8.0 + esbuild
+
+Rails 7.2 + esbuild: https://github.com/mkhairi/rails-tabler-starter/tree/rails7
+
 
 ## Goals
 
