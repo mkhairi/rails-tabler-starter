@@ -118,7 +118,7 @@ SimpleForm.setup do |config|
   # config.default_form_class = nil
 
   # You can define which elements should obtain additional classes
-  config.generate_additional_classes_for = [:input]
+  config.generate_additional_classes_for = [ :input ]
 
   # Whether attributes are required by default (or not). Default is true.
   # config.required_by_default = true
