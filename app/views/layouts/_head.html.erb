@@ -1,14 +1,19 @@
 <title><%= content_for(:title) || "Tabler" %></title>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no viewport-fit=cover">
+<meta name="description" content="Tabler on Rails, Kickstart your Rails app a premium and open source dashboard template with a responsive and high-quality UI.">
+<meta name="keywords" content="Tabler, Rails, Template, Bootstrap, Jumpstart, Kickstart, Stater">
+<meta name="author" content="khairi.my">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
+<meta name="view-transition" content="same-origin" />
+<meta name="turbo-prefetch" content="false">
 <%= csrf_meta_tags %>
 <%= csp_meta_tag %>
-
+<%= action_cable_meta_tag%>
 <%= yield :head %>
 
 <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
