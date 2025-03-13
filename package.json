@@ -2,34 +2,34 @@
   "name": "app",
   "private": true,
   "devDependencies": {
-    "esbuild": "^0.24.0",
+    "esbuild": "^0.25.1",
     "esbuild-plugin-copy": "^2.1.1",
     "esbuild-rails": "^1.0.7",
-    "esbuild-sass-plugin": "^3.0.0",
-    "workbox-cli": "^7.0.0"
+    "esbuild-sass-plugin": "^3.3.1",
+    "workbox-cli": "^7.3.0"
   },
   "scripts": {
     "build": "node esbuild.config.mjs"
   },
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
-    "@hotwired/turbo-rails": "^8.0.12",
+    "@hotwired/turbo-rails": "^8.0.13",
     "@popperjs/core": "^2.11.8",
-    "autoprefixer": "^10.4.20",
-    "@rails/actioncable": "^7.2.1",
-    "@rails/activestorage": "^7.2.1",
-    "@rails/request.js": "^0.0.9",
-    "@tabler/core": "^1.0.0-beta21",
-    "@tabler/icons": "^3.15.0",
+    "@rails/actioncable": "^7.2.201",
+    "@rails/activestorage": "^8.0.200",
+    "@rails/request.js": "^0.0.11",
+    "@tabler/core": "^1.1.1",
+    "@tabler/icons": "^3.31.0",
+    "autoprefixer": "^10.4.21",
     "bootstrap": "5.3.3",
-    "nodemon": "^3.1.7",
-    "postcss": "^8.4.47",
-    "postcss-cli": "^11.0.0",
-    "sass": "^1.80.6",
-    "tinymce": "^7.0.0"
+    "nodemon": "^3.1.9",
+    "postcss": "^8.5.3",
+    "postcss-cli": "^11.0.1",
+    "sass": "^1.85.1",
+    "tinymce": "^7.7.1"
   },
   "browserslist": [
     "defaults"
   ],
-  "packageManager": "yarn@4.4.1+sha256.920b4530755296dc2ce8b4351f057d4a26429524fcb2789d277560d94837c27e"
+  "packageManager": "yarn@4.7.0+sha512.5a0afa1d4c1d844b3447ee3319633797bcd6385d9a44be07993ae52ff4facabccafb4af5dcd1c2f9a94ac113e5e9ff56f6130431905884414229e284e37bb7c9"
 }
