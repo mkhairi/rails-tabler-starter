@@ -56,7 +56,10 @@ const config = {
         }
       ]
     }),
-    sassPlugin()
+    sassPlugin({
+      quietDeps: false, // set to true to silence all sass deprecation warnings from dependencies
+      silenceDeprecations: []
+    })
   ]
 }
 
