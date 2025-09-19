@@ -1,0 +1,13 @@
+@use "@tabler/core/scss/tabler" as tabler;
+
+// html {
+//   scroll-behavior: auto !important;
+// }
+
+// Override Tabler's default root padding
+
+@include tabler.media-breakpoint-up(lg) {
+  :root, :host {
+    margin-left: 0;
+  }
+}

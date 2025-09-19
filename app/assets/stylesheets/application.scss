@@ -1,2 +1,4 @@
-@import "@tabler/core/scss/tabler";
-@import "components/index";
+@use "variables";
+@use "tabler";
+@use "vendor";
+@use "components/index";

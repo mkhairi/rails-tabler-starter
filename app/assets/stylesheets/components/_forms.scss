@@ -4,7 +4,7 @@ abbr[title] {
 }
 // apply primary button style to buttons with only `btn` class
 [class="btn"] {
-  @extend .btn-primary;
+  @extend .btn-primary !optional;
 }
 
 // optional vertical & horizontal form spacing
